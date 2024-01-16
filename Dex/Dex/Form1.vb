@@ -48,8 +48,25 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If IO.File.Exists("data.txt") Then
             Dim inFile As New StreamReader("data.txt")
-            Dim R = inFile.ReadLine
+            records(0) = inFile.ReadLine
             inFile.Close()
+            showrecord(0)
         End If
+    End Sub
+    Public Sub showrecord(index As Integer)
+        Dim Fields() As String
+        Fields = records(index).Split("|")
+        Field1.Text = Fields(0)
+        Field2.Text = Fields(1)
+        Field3.Text = Fields(2)
+        Field4.Text = Fields(3)
+        Field5.Text = Fields(4)
+        Field6.Text = Fields(5)
+        Field7.Text = Fields(6)
+        Field8.Text = Fields(7)
+        If File.Exists(Fields(5)) Then
+            PictureBox1.Load(Fields(5))
+        End If
+
     End Sub
 End Class
