@@ -1,5 +1,5 @@
-﻿Imports System.IO
-
+﻿
+Imports System.IO
 Public Class Form1
     Dim records(50) As String
     Private Sub NewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click
@@ -8,33 +8,23 @@ Public Class Form1
         Field3.Text = ""
         Field4.Text = ""
         Field5.Text = ""
-        Field6.Text = ""
-        Field7.Text = ""
-        Field8.Text = ""
         PictureBox1.Image = Nothing
-
     End Sub
 
     Private Sub SaveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveToolStripMenuItem.Click
-        Dim outFile As New IO.StreamWriter("Data.txt")
-        outFile.Write(Field1.Text)
-        outFile.Write("|")
-        outFile.Write(Field2.Text)
-        outFile.Write("|")
-        outFile.Write(Field3.Text)
-        outFile.Write("|")
-        outFile.Write(Field4.Text)
-        outFile.Write("|")
-        outFile.Write(Field5.Text)
-        outFile.Write("|")
-        outFile.Write(Field6.Text)
-        outFile.Write("|")
-        outFile.Write(Field7.Text)
-        outFile.Write("|")
-        outFile.Write(Field8.Text)
-        outFile.Write("|")
-        outFile.WriteLine(PictureBox1.ImageLocation)
-        outFile.Close()
+        Dim outfile As New IO.StreamWriter("data.txt")
+        outfile.Write(Field1.Text)
+        outfile.Write("|")
+        outfile.Write(Field2.Text)
+        outfile.Write("|")
+        outfile.Write(Field3.Text)
+        outfile.Write("|")
+        outfile.Write(Field4.Text)
+        outfile.Write("|")
+        outfile.Write(Field5.Text)
+        outfile.Write("|")
+        outfile.WriteLine(PictureBox1.ImageLocation)
+        outfile.Close()
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
@@ -46,26 +36,30 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If IO.File.Exists("data.txt") Then
+        If IO.File.Exists("Data.txt") Then
             Dim inFile As New StreamReader("data.txt")
-            records(0) = inFile.ReadLine
+            Dim idx As Integer = 0
+            While (Not inFile.EndOfStream)
+                records(idx) = inFile.ReadLine
+                idx = idx + 1
+            End While
             inFile.Close()
-            showrecord(0)
+            Showrecord(0)
         End If
     End Sub
-    Public Sub showrecord(index As Integer)
-        Dim Fields() As String
-        Fields = records(index).Split("|")
-        Field1.Text = Fields(0)
-        Field2.Text = Fields(1)
-        Field3.Text = Fields(2)
-        Field4.Text = Fields(3)
-        Field5.Text = Fields(4)
-        Field6.Text = Fields(5)
-        Field7.Text = Fields(6)
-        Field8.Text = Fields(7)
-        If File.Exists(Fields(5)) Then
-            PictureBox1.Load(Fields(5))
+    Public Sub Showrecord(Index As Integer)
+        Dim fields() As String
+        fields = records(Index).Split("|")
+        Field1.Text = fields(0)
+        Field2.Text = fields(1)
+        Field3.Text = fields(2)
+        Field4.Text = fields(3)
+        Field5.Text = fields(4)
+        Field6.Text = fields(5)
+        Field7.Text = fields(6)
+        Field8.Text = fields(7)
+        If File.Exists(fields(5)) Then
+            PictureBox1.Load(fields(5))
         End If
 
     End Sub
