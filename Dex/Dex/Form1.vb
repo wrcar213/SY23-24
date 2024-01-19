@@ -15,6 +15,8 @@ Public Class Form1
         F7.Text = ""
         F8.Text = ""
         PictureBox1.Image = Nothing
+        current = count
+        count = count + 1
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
