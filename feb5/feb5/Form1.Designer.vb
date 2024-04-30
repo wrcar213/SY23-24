@@ -22,40 +22,54 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ClickerControl1 = New feb5.ClickerControl()
-        Me.ClickerControl2 = New feb5.ClickerControl()
         Me.ClickerControl3 = New feb5.ClickerControl()
+        Me.ClickerControl2 = New feb5.ClickerControl()
+        Me.ClickerControl1 = New feb5.ClickerControl()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'ClickerControl1
+        'ClickerControl3
         '
-        Me.ClickerControl1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClickerControl1.Location = New System.Drawing.Point(120, 88)
-        Me.ClickerControl1.Name = "ClickerControl1"
-        Me.ClickerControl1.Size = New System.Drawing.Size(110, 99)
-        Me.ClickerControl1.TabIndex = 6
+        Me.ClickerControl3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.ClickerControl3.Increment = 1
+        Me.ClickerControl3.Location = New System.Drawing.Point(176, 193)
+        Me.ClickerControl3.Name = "ClickerControl3"
+        Me.ClickerControl3.Size = New System.Drawing.Size(110, 99)
+        Me.ClickerControl3.TabIndex = 8
         '
         'ClickerControl2
         '
         Me.ClickerControl2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ClickerControl2.Increment = 1
         Me.ClickerControl2.Location = New System.Drawing.Point(236, 88)
         Me.ClickerControl2.Name = "ClickerControl2"
         Me.ClickerControl2.Size = New System.Drawing.Size(110, 99)
         Me.ClickerControl2.TabIndex = 7
         '
-        'ClickerControl3
+        'ClickerControl1
         '
-        Me.ClickerControl3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.ClickerControl3.Location = New System.Drawing.Point(176, 193)
-        Me.ClickerControl3.Name = "ClickerControl3"
-        Me.ClickerControl3.Size = New System.Drawing.Size(110, 99)
-        Me.ClickerControl3.TabIndex = 8
+        Me.ClickerControl1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.ClickerControl1.Increment = 1
+        Me.ClickerControl1.Location = New System.Drawing.Point(120, 88)
+        Me.ClickerControl1.Name = "ClickerControl1"
+        Me.ClickerControl1.Size = New System.Drawing.Size(110, 99)
+        Me.ClickerControl1.TabIndex = 6
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(486, 163)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 9
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ClickerControl3)
         Me.Controls.Add(Me.ClickerControl2)
         Me.Controls.Add(Me.ClickerControl1)
@@ -67,4 +81,5 @@ Partial Class Form1
     Friend WithEvents ClickerControl1 As ClickerControl
     Friend WithEvents ClickerControl2 As ClickerControl
     Friend WithEvents ClickerControl3 As ClickerControl
+    Friend WithEvents Button1 As Button
 End Class
