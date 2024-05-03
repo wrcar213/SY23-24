@@ -5,27 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyPaint"
         mc:Ignorable="d"
-        Title="MainWindow" Height="606" Width="896">
+        Title="MainWindow" Height="784" Width="896">
     <Grid x:Name="Grid" Margin="205,0,0,210">
         <Grid.RowDefinitions>
-            <RowDefinition Height="16*"/>
-            <RowDefinition Height="15*"/>
+            <RowDefinition Height="225*"/>
+            <RowDefinition Height="74*"/>
+            <RowDefinition Height="137*"/>
         </Grid.RowDefinitions>
-        <Rectangle x:Name="ColorRectangle1" HorizontalAlignment="Left" Height="42" Margin="-184,16,0,0" Stroke="Black" VerticalAlignment="Top" Width="35" Fill="#FFFFC1FE"/>
-        <Slider x:Name="WidthSlider" HorizontalAlignment="Left" Margin="-184,170,0,0" VerticalAlignment="Top" Width="120" Maximum="50" Minimum="5"/>
-        <Slider x:Name="HeightSlider" HorizontalAlignment="Left" Margin="-184,147,0,0" VerticalAlignment="Top" Width="120" Maximum="50" Minimum="5"/>
-        <Canvas HorizontalAlignment="Left" Height="182" Margin="360,147,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="30"/>
-        <Canvas x:Name="DrawingCanvas" Margin="0,0,0,10" Grid.RowSpan="2">
+        <Rectangle x:Name="ColorRectangle1" HorizontalAlignment="Left" Height="42" Margin="-194,-5,0,0" Stroke="Black" VerticalAlignment="Top" Width="36" Fill="#FFFFC1FE"/>
+        <Slider x:Name="WidthSlider" HorizontalAlignment="Left" Margin="-194,149,0,0" VerticalAlignment="Top" Width="120" Maximum="50" Minimum="5"/>
+        <Slider x:Name="HeightSlider" HorizontalAlignment="Left" Margin="-194,126,0,0" VerticalAlignment="Top" Width="120" Maximum="50" Minimum="5"/>
+        <Canvas HorizontalAlignment="Left" Height="182" Margin="360,147,0,0" Grid.RowSpan="3" VerticalAlignment="Top" Width="30"/>
+        <Canvas x:Name="DrawingCanvas" Margin="0,0,0,58" Grid.RowSpan="3" Width="691">
             <Rectangle x:Name="Rectangle" Height="380" Stroke="Black" Width="690" OpacityMask="#FF595959" Fill="#FF2B2B2B" HorizontalAlignment="Left" Canvas.Left="10" VerticalAlignment="Center"/>
         </Canvas>
-        <Rectangle x:Name="ColorRectangle1_Copy" HorizontalAlignment="Left" Height="42" Margin="-149,16,0,0" Stroke="Black" VerticalAlignment="Top" Width="35" Fill="#FFF98181"/>
-        <Rectangle x:Name="ColorRectangle1_Copy1" HorizontalAlignment="Left" Height="42" Margin="-114,16,0,0" Stroke="Black" VerticalAlignment="Top" Width="35" Fill="#FFA4F7E5"/>
-        <Rectangle x:Name="ColorRectangle1_Copy2" HorizontalAlignment="Left" Height="42" Margin="-184,58,0,0" Stroke="Black" VerticalAlignment="Top" Width="35" Fill="#FFC2FFC1"/>
-        <Rectangle x:Name="ColorRectangle1_Copy3" HorizontalAlignment="Left" Height="42" Margin="-149,58,0,0" Stroke="Black" VerticalAlignment="Top" Width="35" Fill="#FFFEFFB4"/>
-        <Rectangle x:Name="ColorRectangle1_Copy4" HorizontalAlignment="Left" Height="42" Margin="-114,58,0,0" Stroke="Black" VerticalAlignment="Top" Width="35" Fill="#FF9C94F3"/>
-        <Rectangle x:Name="ColorRectangle1_Copy5" HorizontalAlignment="Left" Height="42" Margin="-184,100,0,0" Stroke="Black" VerticalAlignment="Top" Width="35" Fill="#FFDCF7A5"/>
-        <Rectangle x:Name="ColorRectangle1_Copy6" HorizontalAlignment="Left" Height="42" Margin="-149,100,0,0" Stroke="Black" VerticalAlignment="Top" Width="35" Fill="#FFD585FD"/>
-        <Rectangle x:Name="ColorRectangle1_Copy7" HorizontalAlignment="Left" Height="42" Margin="-114,100,0,0" Stroke="Black" VerticalAlignment="Top" Width="35" Fill="#FFFAD599"/>
+        <Rectangle x:Name="ColorRectangle1_Copy" HorizontalAlignment="Left" Height="42" Margin="-158,-5,0,0" Stroke="Black" VerticalAlignment="Top" Width="34" Fill="#FFF98181"/>
+        <Rectangle x:Name="ColorRectangle1_Copy1" HorizontalAlignment="Left" Height="42" Margin="-124,-5,0,0" Stroke="Black" VerticalAlignment="Top" Width="36" Fill="#FFA4F7E5"/>
+        <Rectangle x:Name="ColorRectangle1_Copy2" HorizontalAlignment="Left" Height="42" Margin="-194,37,0,0" Stroke="Black" VerticalAlignment="Top" Width="36" Fill="#FFC2FFC1"/>
+        <Rectangle x:Name="ColorRectangle1_Copy3" HorizontalAlignment="Left" Height="42" Margin="-158,37,0,0" Stroke="Black" VerticalAlignment="Top" Width="34" Fill="#FFFEFFB4"/>
+        <Rectangle x:Name="ColorRectangle1_Copy4" HorizontalAlignment="Left" Height="42" Margin="-124,37,0,0" Stroke="Black" VerticalAlignment="Top" Width="36" Fill="#FF9C94F3"/>
+        <Rectangle x:Name="ColorRectangle1_Copy5" HorizontalAlignment="Left" Height="42" Margin="-194,79,0,0" Stroke="Black" VerticalAlignment="Top" Width="36" Fill="#FFDCF7A5"/>
+        <Rectangle x:Name="ColorRectangle1_Copy6" HorizontalAlignment="Left" Height="42" Margin="-158,79,0,0" Stroke="Black" VerticalAlignment="Top" Width="34" Fill="#FFD585FD"/>
+        <Rectangle x:Name="ColorRectangle1_Copy7" HorizontalAlignment="Left" Height="42" Margin="-124,79,0,0" Stroke="Black" VerticalAlignment="Top" Width="36" Fill="#FFFAD599"/>
+        <Button x:Name="ClearButton" Content="Clear" HorizontalAlignment="Left" Margin="-187,193,0,0" VerticalAlignment="Top" Height="20" Width="107"/>
+        <Button Content="Undo" HorizontalAlignment="Left" Margin="-185,220,0,0" VerticalAlignment="Top" Width="105" Click="Button_Click" Grid.RowSpan="2"/>
+        <Button x:Name="EllipseButton" Content="Ellipse" HorizontalAlignment="Left" Margin="-185,251,0,0" VerticalAlignment="Top" Width="105"/>
+        <Button x:Name="RecButton" Content="Rectangle" HorizontalAlignment="Left" Margin="-185,280,0,0" VerticalAlignment="Top" Width="105" Grid.RowSpan="2"/>
+        <Label x:Name="ShapeLabel" Content="Shape" HorizontalAlignment="Left" Margin="-177,166,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Save" Content="Button" HorizontalAlignment="Left" Margin="-183,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="103" Click="Button_Click_1"/>
+        <Rectangle x:Name="Color1" HorizontalAlignment="Left" Height="40" Margin="-190,76,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="50" Fill="Black" Grid.RowSpan="2"/>
+        <Rectangle x:Name="Color2" HorizontalAlignment="Left" Height="40" Margin="-132,76,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="52" Fill="Black" Grid.RowSpan="2"/>
+        <Slider x:Name="R" HorizontalAlignment="Left" Margin="-192,31,0,0" Grid.Row="2" VerticalAlignment="Top" Width="120" Maximum="255"/>
+        <Slider HorizontalAlignment="Left" Height="0" Margin="-174,61,0,0" Grid.Row="2" VerticalAlignment="Top" Width="120"/>
+        <Slider x:Name="G" HorizontalAlignment="Left" Margin="-192,48,0,0" Grid.Row="2" VerticalAlignment="Top" Width="120" Maximum="255"/>
+        <Slider HorizontalAlignment="Left" Height="0" Margin="-192,196,0,0" Grid.Row="2" VerticalAlignment="Top" Width="120"/>
+        <Slider x:Name="B" HorizontalAlignment="Left" Margin="-192,66,0,0" Grid.Row="2" VerticalAlignment="Top" Width="120" Maximum="255"/>
+        <Slider x:Name="AngleSlider" HorizontalAlignment="Left" Margin="-191,89,0,0" Grid.Row="2" VerticalAlignment="Top" Width="120" Maximum="360" Minimum="-360"/>
 
     </Grid>
 </Window>
